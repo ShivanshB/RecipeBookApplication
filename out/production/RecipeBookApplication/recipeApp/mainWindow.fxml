@@ -1,0 +1,116 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+
+<?import javafx.scene.control.TextField?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioMenuItem?>
+<BorderPane fx:id="mainBorderPane" fx:controller="recipeApp.Controller"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="@styles.css">
+    <fx:define>
+        <ToggleGroup fx:id="filterToggleGroup"/>
+    </fx:define>
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Recipes">
+                    <MenuItem text="New" onAction="#handleNewRecipe"/>
+                    <MenuItem text="Delete" onAction="#deleteRecipe" fx:id="deleteMenuItem"/>
+                    <MenuItem text="Edit" onAction="#editRecipe" fx:id="editMenuItem"/>
+                    <MenuItem text="Increment Made" onAction="#incrementMade" fx:id="incrementMenuItem"/>
+                </Menu>
+
+                <Menu text="Ingredients">
+                    <MenuItem text="New" onAction="#handleNewIngredient"/>
+                    <MenuItem text="Edit" onAction="#editIngredient"/>
+                    <MenuItem text="View All" onAction="#viewAllIngredients"/>
+                </Menu>
+
+                <Menu text="Filter">
+                    <items>
+                        <RadioMenuItem text="None" toggleGroup="$filterToggleGroup" fx:id="noFilter"/>
+                        <RadioMenuItem text="Frequency" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="Prep Time" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="Serving Size" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="Meal Category" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="Vegetarian" toggleGroup="$filterToggleGroup" fx:id="vegFilter"/>
+                        <RadioMenuItem text="Non-Vegetarian" toggleGroup="$filterToggleGroup" fx:id="nonVegFilter"/>
+                        <RadioMenuItem text="Taste Rating" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="Prep time per Serving" toggleGroup="$filterToggleGroup"/>
+                        <RadioMenuItem text="By Ingredient" toggleGroup="$filterToggleGroup"/>
+                    </items>
+                </Menu>
+
+                <Menu text="Sort">
+                    <MenuItem text="Frequency"/>
+                    <MenuItem text="Prep Time"/>
+                    <MenuItem text="Serving Size"/>
+                    <MenuItem text="Taste Rating"/>
+                    <MenuItem text="Prep time per Serving"/>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <TextField id="searchBar" fx:id="searchBar" promptText="Search for your recipe by name" prefWidth="400"
+                           focusTraversable="false">
+                </TextField>
+                <Button text="Search">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH"/>
+                    </graphic>
+                </Button>
+            </ToolBar>
+        </VBox>
+
+    </top>
+    <center>
+        <BorderPane>
+            <center>
+                <HBox spacing="10">
+                    <VBox HBox.hgrow="ALWAYS">
+                        <Label id="headingLabel" text="Ingredients" maxWidth="Infinity" alignment="CENTER"/>
+                        <ListView  editable="true" fx:id="ingredientsListView" VBox.vgrow="ALWAYS" maxHeight="Infinity" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox HBox.hgrow="ALWAYS">
+                        <Label id="headingLabel" text="Instructions"  maxWidth="Infinity" alignment="CENTER"/>
+                        <ListView fx:id="instructionsListView"  VBox.vgrow="ALWAYS" maxHeight="Infinity" maxWidth="Infinity"/>
+                    </VBox>
+
+                    <padding>
+                        <Insets top="10" bottom="10" left="10" right="10"/>
+                    </padding>
+                </HBox>
+            </center>
+            <bottom>
+                <Label id="bottomLabel" fx:id="bottomLabel" alignment="CENTER" textAlignment="CENTER"/>
+            </bottom>
+        </BorderPane>
+
+
+    </center>
+    <left>
+        <HBox spacing="10">
+            <VBox HBox.hgrow="ALWAYS">
+                <Label id="headingLabel" text="Recipe List" maxWidth="Infinity" alignment="CENTER"/>
+                <ListView fx:id="recipeListView" VBox.vgrow="ALWAYS" maxHeight="Infinity" maxWidth="Infinity"/>
+            </VBox>
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+        </HBox>
+    </left>
+</BorderPane>

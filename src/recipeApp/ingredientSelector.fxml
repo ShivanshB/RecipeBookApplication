@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="recipeApp.ingredientSelectorController"
+        hgap="10" vgap="10">
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Select the Ingredient to Edit."/>
+    <ListView fx:id="ingredientListView" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.rowSpan="7" GridPane.columnSpan="1"/>
+    <HBox GridPane.rowIndex="8" GridPane.columnIndex="0">
+<!--        <Button text="Edit"  onAction="#loadEditContents" fx:id="editButton"/>-->
+        <Button text="Save" onAction="#saveEditContents" fx:id="saveButton"/>
+    </HBox>
+    <Label  text="Name: " GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <TextField fx:id="ingredientName" promptText="Enter Ingredient Name" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+    <fx:define>
+        <ToggleGroup fx:id="vegetarianToggleGroup"/>
+    </fx:define>
+    <Label text="Choose the type: " GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <RadioButton fx:id="vegButton" text="Vegetarian" toggleGroup="$vegetarianToggleGroup" selected="true" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <RadioButton fx:id="nonVegButton" text="Non-vegetarian" toggleGroup="$vegetarianToggleGroup" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+</GridPane>

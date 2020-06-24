@@ -1,0 +1,54 @@
+<recipeData>
+   <XMLList class="java.util.ArrayList">
+      <recipe counter="11" makingFrequency="10.0" prepTimeMinutes="9" servingSize="9.0" mealType="BREAKFAST">
+         <XMLingredientValueMap class="java.util.HashMap">
+            <entry>
+               <ingredient name="afsfa">
+                  <isVegIngredient>true</isVegIngredient>
+               </ingredient>
+               <value unit="KG">
+                  <numberValue>3.0</numberValue>
+               </value>
+            </entry>
+         </XMLingredientValueMap>
+         <recipeName>dsgdsg</recipeName>
+         <isVegRecipe>true</isVegRecipe>
+         <tasteRating>9.0</tasteRating>
+         <costPerServing>0.0</costPerServing>
+         <XMLrecipeInstructions class="java.util.ArrayList">
+            <string>asfasfasf</string>
+         </XMLrecipeInstructions>
+         <preptimePerServing>1.0</preptimePerServing>
+         <recipeCost>0.0</recipeCost>
+         <timesMade>0</timesMade>
+         <XMLingredientStringList class="java.util.ArrayList">
+            <string>3.0 KG: afsfa</string>
+         </XMLingredientStringList>
+      </recipe>
+      <recipe counter="11" makingFrequency="0.0" prepTimeMinutes="0" servingSize="0.0" mealType="BREAKFAST">
+         <XMLingredientValueMap class="java.util.HashMap">
+            <entry>
+               <ingredient name=" wdtwet">
+                  <isVegIngredient>true</isVegIngredient>
+               </ingredient>
+               <value unit="KG">
+                  <numberValue>3.0</numberValue>
+               </value>
+            </entry>
+         </XMLingredientValueMap>
+         <recipeName>sdgsdgdsq</recipeName>
+         <isVegRecipe>true</isVegRecipe>
+         <tasteRating>0.0</tasteRating>
+         <costPerServing>NaN</costPerServing>
+         <XMLrecipeInstructions class="java.util.ArrayList">
+            <string>asfas</string>
+         </XMLrecipeInstructions>
+         <preptimePerServing>NaN</preptimePerServing>
+         <recipeCost>0.0</recipeCost>
+         <timesMade>0</timesMade>
+         <XMLingredientStringList class="java.util.ArrayList">
+            <string>3.0 KG:  wdtwet</string>
+         </XMLingredientStringList>
+      </recipe>
+   </XMLList>
+</recipeData>

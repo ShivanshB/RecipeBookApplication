@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="recipeApp.editRecipeInstructionsController" hgap="10" vgap="10">
+
+    <Label text="Enter Instruction: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField promptText="Enter Instruction" GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="instructionField"/>
+    <TextField promptText="Instruction Number to Add/Delete At" GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.columnSpan="3" fx:id="replaceNumber"/>
+
+
+    <fx:define>
+        <ToggleGroup fx:id="instructionToggleGroup"/>
+    </fx:define>
+    <Label text="Edit Type: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <HBox GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3" spacing="5">
+        <RadioButton onAction="#disableNumberField" fx:id="endButton" text="Add to End" toggleGroup="$instructionToggleGroup" selected="true" />
+        <RadioButton onAction="#enableNumberField" fx:id="replaceButton" text="Replace Step" toggleGroup="$instructionToggleGroup"/>
+        <RadioButton onAction="#enableNumberField" fx:id="middleButton" text="Add to Middle" toggleGroup="$instructionToggleGroup"/>
+        <RadioButton onAction="#enableNumberField" fx:id="deleteButton" text="Delete" toggleGroup="$instructionToggleGroup"/>
+    </HBox>
+
+    <Button text="Update" fx:id="addButton" GridPane.columnIndex="5" GridPane.rowIndex="1" onAction="#instructionUpdate"/>
+
+    <ListView fx:id="instructionListView" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="6"/>
+
+
+</GridPane>

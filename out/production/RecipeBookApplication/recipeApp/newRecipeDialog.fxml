@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="recipeApp.NewRecipeDialogController"
+           hgap="10" vgap="10">
+    <Label  text="Name: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="recipeName" promptText="Enter Recipe Name" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+
+    <Label  text="Making Frequency: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="makingFrequency" promptText="Number 0-10; 0 is never made" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+
+    <Label  text="Prep Time: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="prepTime" promptText="Enter prep time in minutes" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+
+    <Label  text="Serving Size: " GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="servingSize" promptText="Enter serving size" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+    <Label  text="Recipe Rating: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="rating" promptText="Enter Recipe Rating 0-100" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+    <fx:define>
+        <ToggleGroup fx:id="mealToggleGroup"/>
+    </fx:define>
+    <Label text="Choose the type: " GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="9" spacing="5">
+        <RadioButton fx:id="breakfastButton" text="BREAKFAST" toggleGroup="$mealToggleGroup" selected="true" />
+        <RadioButton fx:id="lunchButton" text="LUNCH" toggleGroup="$mealToggleGroup"/>
+        <RadioButton fx:id="dinnerButton" text="DINNER" toggleGroup="$mealToggleGroup"/>
+        <RadioButton fx:id="snackButton" text="SNACK" toggleGroup="$mealToggleGroup"/>
+    </HBox>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="30"/>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="15"/>
+        <ColumnConstraints percentWidth="15"/>
+        <ColumnConstraints percentWidth="10"/>
+    </columnConstraints>
+</GridPane>
